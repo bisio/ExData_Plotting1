@@ -8,3 +8,8 @@ prepare.data <- function() {
   power.data
 }
 
+Sys.setlocale("LC_TIME", "English")
+power.data <- prepare.data()
+png("plot2.png",width = 480,height = 480)
+plot(power.data$date.time,power.data$Global_active_power,type="l",xlab="",ylab="Global Active Power (kilowatts)")
+dev.off()
